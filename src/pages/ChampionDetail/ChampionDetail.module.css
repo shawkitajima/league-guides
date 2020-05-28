@@ -1,0 +1,65 @@
+.splash {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.splash > div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+    overflow: scroll;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.splash > div > div {
+    display: flex;
+    align-items: center;
+    border: 2px solid gray;
+    margin: 2% 0%;
+}
+
+.splash > div > div:hover {
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.miniSplash {
+    width: 50%;
+    height: auto;
+    margin-right: 5%;
+}
+
+.lore {
+    padding: 0 5%;
+    margin: 2% 0%;
+    font-style: italic;
+    text-align: center;
+    font-size: 18px;
+}
+
+.spells {
+    margin-top: 2%;
+    padding: 0 2%;
+    width: 80%;
+}
+
+.spells > div {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.spells > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+}
+
+.spells > div > div > div:first-child {
+    font-weight: 800;
+    padding-bottom: 0.5%;
+}
