@@ -1,13 +1,17 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom'
 import './App.css';
-import AllChampionsPage from './pages/AllChampionsPage/AllChampionsPage';
+import GuideEditorPage from './pages/GuideEditorPage/GuideEditorPage';
 import ChampionDetail from './pages/ChampionDetail/ChampionDetail';
+import AllChampionsPage from './pages/AllChampionsPage/AllChampionsPage';
 
 function App() {
   return (
     <div>
       <Switch>
+        <Route exact path="/guides/edit/:champ">
+            <GuideEditorPage />
+        </Route>
         <Route exact path="/:champ">
             <ChampionDetail />
         </Route>

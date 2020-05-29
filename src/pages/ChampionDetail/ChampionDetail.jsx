@@ -38,7 +38,7 @@ const ChampionDetail = () => {
                 </div>
                 <div className={styles.spells}>
                     <div>
-                        <img src={`http://ddragon.leagueoflegends.com/cdn/10.10.3216176/img/passive/${champion.passive.image.full}`} alt=""/>
+                        <img src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/passive/${champion.passive.image.full}`} alt=""/>
                         <div>
                             <div>Passive: {champion.passive.name}</div>
                             <div>{champion.passive.description}</div>
@@ -46,13 +46,33 @@ const ChampionDetail = () => {
                     </div>
                     {champion.spells.map((spell, idx) => (
                         <div key={idx}>
-                            <img src={`http://ddragon.leagueoflegends.com/cdn/10.10.3216176/img/spell/${spell.image.full}`} alt=""/>
+                            <img src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/spell/${spell.image.full}`} alt=""/>
                             <div>
                                 <div>{spell.name}</div>
                                 <div>{spell.description}</div>
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className={styles.tips}>
+                    <div>
+                        <div>Ally Tips</div>
+                        <ul>
+                            {champion.allytips.map((tip, idx) => (
+                                <li key={idx}>{tip}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+                <div className={styles.tips}>
+                    <div>
+                        <div>Enemy Tips</div>
+                        <ul>
+                            {champion.enemytips.map((tip, idx) => (
+                                <li key={idx}>{tip}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
         ) : (

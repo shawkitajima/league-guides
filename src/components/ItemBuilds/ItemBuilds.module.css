@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    color: darkgray;
+}
+
+.container > div:first-child {
+    color: black;
+    font-weight:900;
+    font-size: 20px;
+}
+
+.itemSet {
+    display: flex;
+    font-size: 16px;
+    font-weight: 800;
+    border: 1px solid gray;
+}
+
+.itemSet > div:first-child {
+    border: 1px solid gray;
+    width: 10%;
+}
+
+.row {
+    display: flex;
+
+}
