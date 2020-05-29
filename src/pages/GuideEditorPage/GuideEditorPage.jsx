@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import championService from '../../utils/championService';
 import itemService from '../../utils/itemService';
-import ItemBuilds from '../../components/ItemBuilds/ItemBuilds';
+import ItemBuilds from '../../components/Items/ItemBuilds/ItemBuilds';
 
 const GuideEditorPage = props => {
     const {champ} = useParams();

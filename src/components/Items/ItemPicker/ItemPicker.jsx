@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import ItemImage from '../ItemImage/ItemImage';
 
 const ItemPicker = props => {
     return (
@@ -14,7 +15,7 @@ const ItemPicker = props => {
             <React.Fragment>
                 <div>
                     <div>{option.name}</div>
-                    <img src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/item/${option.image.full}`} alt=""/>
+                    <ItemImage item={option} />
                 </div>
             </React.Fragment>
             )}
