@@ -1,13 +1,10 @@
-.container {
-    position: relative;
-}
+
 
 .details {
-    position: absolute;
-    top: 100%;
-    left: 90%;
-    z-index: 100;
     background: rgba(0,0,0,0.9);
     color: white;
-    width: 20rem;
+    position: absolute;
+    z-index: 100;
+    font-size: 12px;
+    padding: 1%;
 }

@@ -7,14 +7,15 @@ const ItemImage = props => {
 
     return (
         <div className={styles.container}>
+            <img onMouseOver={() => setShowDetail(true)} onMouseLeave={() => setShowDetail(false)} 
+                src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/item/${props.item.image.full}`} alt="" 
+                />
             {showDetail && 
                 <div className={styles.details}>
                     <div>{props.item.name}</div>
-                    <div>{props.item.plaintext}</div>
-                </div>}
-            <img onMouseOver={() => setShowDetail(true)} onMouseLeave={() => setShowDetail(false)} 
-                src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/item/${props.item.image.full}`} alt="" 
-            />
+                    <div dangerouslySetInnerHTML={{__html: props.item.description}} />
+                </div>
+            }
         </div>
     )
 }

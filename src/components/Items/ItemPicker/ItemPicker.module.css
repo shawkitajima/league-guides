@@ -1,0 +1,9 @@
+.container {
+    width: 40%;
+}
+
+.autoComplete {
+    position: absolute;
+    background: white;
+    z-index: 200;
+}

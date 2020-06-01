@@ -19,7 +19,7 @@ const ItemBuilds = props => {
 
     return (
         <div className={styles.container}>
-            <ItemPicker itemsArray={itemsArray} />
+            
             <div>Recommended Item Builds</div>
             <div className={styles.itemSet}>
                 <div>Starter Items</div>
@@ -30,7 +30,7 @@ const ItemBuilds = props => {
                             {row.map((item, itemIdx) => (
                                 <div key={itemIdx}>Item</div>
                             ))}
-                            <AddBoxIcon style={{fontSize: 20}} />
+                            <ItemPicker itemsArray={itemsArray} />
                         </div>
                     ))}
                 </div>

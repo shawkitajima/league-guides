@@ -1,36 +1,29 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import ItemImage from '../ItemImage/ItemImage';
+import React, {useState} from 'react';
+import AutoComplete from '../../utility/AutoComplete/AutoComplete';
+import styles from './ItemPicker.module.css'
+
+import AddBoxIcon from '@material-ui/icons/AddBox';
+
 
 const ItemPicker = props => {
+    const [visible, setVisible] = useState(false);
+
     return (
-        <Autocomplete
-            id="country-select-demo"
-            style={{ width: 300 }}
-            options={props.itemsArray}
-            autoHighlight
-            getOptionLabel={(option) => option.name}
-            renderOption={(option) => (
-            <React.Fragment>
-                <div>
-                    <div>{option.name}</div>
-                    <ItemImage item={option} />
+        <div className={styles.container}>
+            {visible && (
+                <div className={styles.autoComplete}>
+                    <AutoComplete 
+                    results={props.itemsArray} 
+                    label={"name"} 
+                    filterProp={"name"} 
+                    placeholder={"choose item"}
+                    />
                 </div>
-            </React.Fragment>
             )}
-            renderInput={(params) => (
-            <TextField
-                {...params}
-                label="Choose an item"
-                variant="outlined"
-                inputProps={{
-                ...params.inputProps,
-                autoComplete: 'new-password', // disable autocomplete and autofill
-                }}
-            />
-            )}
-        />
+            <div onClick={() => setVisible(!visible)}>
+                < AddBoxIcon style={{fontSize: 20}} />
+            </div>
+        </div>
     )
 }
 
