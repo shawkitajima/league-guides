@@ -23,8 +23,15 @@ const AutoComplete = props => {
     }
 
     const handleClick = result => {
-        console.log(result.name)
         setVisible(false);
+        // props.items is an array of arrays. 
+        // We need to update the last array inside the parent array for that row
+        // We can take advantage of array referencing for this
+        let items = [...props.items];
+        let activeRow = items[props.row];
+        activeRow.push(result);
+        props.setItems(items);
+        props.setVisible(false);
     }
 
     return (

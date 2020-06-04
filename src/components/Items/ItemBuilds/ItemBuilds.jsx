@@ -2,12 +2,11 @@ import React, {useState} from 'react';
 import styles from './ItemBuilds.module.css';
 
 import ItemPicker from '../ItemPicker/ItemPicker';
-
-import AddBoxIcon from '@material-ui/icons/AddBox';
+import ItemImage from '../ItemImage/ItemImage';
 
 const ItemBuilds = props => {
 
-    const [starterItems, setStarterItems] = useState([['boots']]);
+    const [starterItems, setStarterItems] = useState([[]]);
     const [recItems, setRecItems] = useState([[]]);
     const [boots, setBoots] = useState([[]]);
 
@@ -28,9 +27,11 @@ const ItemBuilds = props => {
                     {starterItems.map((row, idx) => (
                         <div key={idx} className={styles.row}>
                             {row.map((item, itemIdx) => (
-                                <div key={itemIdx}>Item</div>
+                                <div key={itemIdx}><ItemImage item={item}/></div>
                             ))}
-                            <ItemPicker itemsArray={itemsArray} />
+                            <ItemPicker itemsArray={itemsArray} setItems={setStarterItems} items={starterItems} row={idx} />
+                            {/* If this is the last row */}
+                            {starterItems.length === idx + 1 && <div onClick={() => setStarterItems([...starterItems, []])}>Add another row</div>}
                         </div>
                     ))}
                 </div>

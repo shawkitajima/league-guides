@@ -17,6 +17,10 @@ const ItemPicker = props => {
                     label={"name"} 
                     filterProp={"name"} 
                     placeholder={"choose item"}
+                    setVisible={setVisible}
+                    setItems={props.setItems}
+                    items={props.items}
+                    row={props.row}
                     />
                 </div>
             )}
