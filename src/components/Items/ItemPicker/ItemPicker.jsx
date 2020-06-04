@@ -21,6 +21,7 @@ const ItemPicker = props => {
                     setItems={props.setItems}
                     items={props.items}
                     row={props.row}
+                    type={props.type}
                     />
                 </div>
             )}

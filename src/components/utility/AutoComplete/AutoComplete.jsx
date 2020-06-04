@@ -36,14 +36,28 @@ const AutoComplete = props => {
 
     return (
         <div>
-            <div><input className={styles.inputBar} onBlur={() => setVisible(false)}  onChange={evt => changeResults(evt)} type="text" placeholder={props.placeholder}/></div>
+            <div>
+                <input className={styles.inputBar} 
+                    onBlur={() => {
+                        setVisible(false);
+                        props.setVisible(false);
+                        }}  
+                    onChange={evt => changeResults(evt)} 
+                    type="text" placeholder={props.placeholder}
+                    onKeyDown={(e) => {
+                        if (e.keyCode === 27) {
+                        setVisible(false);
+                        props.setVisible(false)
+                    }}}
+                />
+            </div>
             { visible && 
                 <div>
                     {results.map((result, idx) => (
                         <div key={idx}>
                             <div className={styles.results} onMouseDown={() => handleClick(result) }>
                                 <div>{result[props.label]}</div>
-                                < ItemImage item={result} />
+                                < ItemImage item={result} type={props.type} />
                             </div>
                         </div>
                     ))}

@@ -1,0 +1,13 @@
+.box {
+    position: relative;
+}
+
+.spellButton {
+    position: absolute;
+    top: 60%;
+    left: 3.5%;
+    padding: 0.25% 0.25%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 16px;
+}

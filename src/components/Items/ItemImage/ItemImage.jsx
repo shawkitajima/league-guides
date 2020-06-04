@@ -8,7 +8,7 @@ const ItemImage = props => {
     return (
         <div className={styles.container}>
             <img onMouseOver={() => setShowDetail(true)} onMouseLeave={() => setShowDetail(false)} 
-                src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/item/${props.item.image.full}`} alt="" 
+                src={`http://ddragon.leagueoflegends.com/cdn/10.11.1/img/${props.type}/${props.item.image.full}`} alt="" 
                 />
             {showDetail && 
                 <div className={styles.details}>
